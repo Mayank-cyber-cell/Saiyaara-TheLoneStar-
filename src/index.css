@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rose-gold: #e8b4b8;
+  --deep-rose: #c44569;
+  --burgundy: #8b1538;
+  --blush: #ffc3d0;
+  --wine: #722f37;
+  --deep-black: #0a0a0a;
+  --card-black: #1a0f12;
+  --border-rose: #4a2c2a;
+  --soft-pink: #f8d7da;
+  --dark-pink: #d63384;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: var(--deep-black);
+  color: var(--soft-pink);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* Typography Classes */
+.hero-text {
+  font-family: 'Cinzel', serif;
+}
+
+.quote-text {
+  font-family: 'Great Vibes', cursive;
+}
+
+.lyrics-text {
+  font-family: 'Merriweather', serif;
+}
+
+.dialogue-text {
+  font-family: 'Lora', serif;
+}
+
+.body-text {
+  font-family: 'Lora', serif;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px var(--rose-gold), 0 0 10px var(--rose-gold), 0 0 15px var(--rose-gold);
+  }
+  50% {
+    text-shadow: 0 0 10px var(--rose-gold), 0 0 20px var(--rose-gold), 0 0 30px var(--rose-gold);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(232, 180, 184, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(232, 180, 184, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0; 
+    transform: scale(0.5); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--rose-gold); }
+}
+
+@keyframes scrollLyrics {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Utility Classes */
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 1s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 1s ease-out;
+}
+
+.glow-text:hover {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.pulse-button:hover {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.shimmer-button {
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.float-element {
+  animation: float 3s ease-in-out infinite;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid var(--gold);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.scroll-lyrics {
+  animation: scrollLyrics 60s linear infinite;
+}
+
+.slide-down {
+  animation: slideDown 1s ease-out;
+}
+
+/* Enhanced Gradients */
+.rose-gradient {
+  background: linear-gradient(135deg, var(--rose-gold) 0%, var(--deep-rose) 50%, var(--burgundy) 100%);
+}
+
+.dark-rose-gradient {
+  background: linear-gradient(135deg, rgba(232, 180, 184, 0.1) 0%, rgba(196, 69, 105, 0.05) 100%);
+}
+
+.ambient-glow {
+  box-shadow: 
+    0 0 20px rgba(232, 180, 184, 0.1),
+    0 0 40px rgba(232, 180, 184, 0.05),
+    inset 0 0 20px rgba(232, 180, 184, 0.02);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 2.5rem;
+  }
+  
+  .quote-text {
+    font-size: 1.5rem;
+  }
+  
+  .lyrics-text {
+    font-size: 1rem;
+  }
+  
+  .dialogue-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Star particles */
+.star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: twinkle var(--duration) ease-in-out infinite;
+  opacity: 0;
+}
+
+/* Music visualizer bars */
+.visualizer-bar {
+  background: linear-gradient(to top, var(--rose-gold), rgba(232, 180, 184, 0.3));
+  animation: musicPulse var(--duration) ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0%, 100% {
+    height: 20%;
+    opacity: 0.3;
+  }
+  50% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+/* Torn paper effect */
+.torn-paper {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><path d="M0 10 Q 10 0 20 10 T 40 10 T 60 10 T 80 10 T 100 10 L 100 0 L 0 0 Z" fill="%231a1a1a"/></svg>');
+  background-repeat: repeat-x;
+  background-position: top;
+}
+
+/* Enhanced scroll effects */
+.parallax-slow {
+  transform: translateY(var(--scroll-y, 0px));
+}
+
+.parallax-fast {
+  transform: translateY(calc(var(--scroll-y, 0px) * 0.5));
+}
+
+/* Loading screen */
+.loading-screen {
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.loading-text {
+  background: linear-gradient(45deg, var(--rose-gold), var(--deep-rose));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced button styles */
+.enhanced-button {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 2px solid var(--rose-gold);
+  color: var(--rose-gold);
+  transition: all 0.3s ease;
+}
+
+.enhanced-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(232, 180, 184, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.enhanced-button:hover::before {
+  left: 100%;
+}
+
+.enhanced-button:hover {
+  background: var(--rose-gold);
+  color: var(--deep-black);
+  box-shadow: 0 0 30px rgba(232, 180, 184, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Love-themed animations */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes loveGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 182, 193, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 182, 193, 0.8), 0 0 30px rgba(255, 105, 180, 0.6);
+  }
+}
+
+@keyframes tearDrop {
+  0% {
+    transform: translateY(-10px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.love-glow {
+  animation: loveGlow 3s ease-in-out infinite;
+}
+
+.font-hindi {
+  font-family: 'Devanagari Sangam MN', 'Noto Sans Devanagari', sans-serif;
+}
+/* Card enhancements */
+.enhanced-card {
+  background: linear-gradient(135deg, rgba(139, 21, 56, 0.15) 0%, rgba(26, 15, 18, 0.9) 50%, rgba(10, 10, 10, 0.95) 100%);
+  border: 1px solid rgba(232, 180, 184, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(139, 21, 56, 0.1);
+}
+
+.enhanced-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 20px 40px rgba(139, 21, 56, 0.2),
+    0 0 30px rgba(232, 180, 184, 0.3);
+  border-color: rgba(232, 180, 184, 0.4);
+}
+
+/* iframe responsive wrapper */
+.iframe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.iframe-wrapper-vertical {
+  padding-bottom: 177.78%; /* 9:16 aspect ratio for vertical videos */
+}
+
+/* Custom scrollbar */
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: var(--card-black);
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: var(--rose-gold);
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: var(--deep-rose);
+}
+
+/* Text selection */
+::selection {
+  background: rgba(232, 180, 184, 0.3);
+  color: white;
+}
+
+/* Focus styles */
+button:focus,
+input:focus {
+  outline: 2px solid var(--rose-gold);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
