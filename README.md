@@ -46,8 +46,7 @@ Designed using **HTML, Tailwind CSS, and custom fonts**, this website captures t
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/Mayank-cyber-cell/Saiyaara-TheLoneStar-.git
-
-```
+   ```
 
 2. Navigate into the project directory:
 
