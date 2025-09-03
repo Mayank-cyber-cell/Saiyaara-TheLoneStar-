@@ -61,7 +61,7 @@ cd Saiyaara-TheLoneStar-
 ## 💡 Inspiration
 
 This project was created after watching the movie Ek Tha Tiger, where the song Saiyaara left an emotional impact.
-The website is not just a design experiment—it's a personal and heartfelt dedication to that feeling of being “a lone star.”
+The website is not just a design experiment it's a personal and heartfelt dedication to that feeling of being “a lone star.”
 
 <p align="center"> <img src="https://media.giphy.com/media/3o6ZsYm5P38OUhAjVe/giphy.gif" width="500" alt="Lonely Star"> </p>
 
